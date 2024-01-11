@@ -1,4 +1,4 @@
-import ModelGift from "../models/modelGift.js";
+import ModelGift from "../modules/modulesGift.js";
 
 // CRUD: Create, Read, Update, Delete
 const ControllerGifts = {
@@ -28,7 +28,7 @@ const ControllerGifts = {
       response.json({
         result: "good",
         message: "Hello from Gift!",
-        data: gift._id,
+        data: gift,
       });
     } catch (error) {
       response.json({
@@ -40,7 +40,7 @@ const ControllerGifts = {
   },
   readGifts: async (request, response) => {
     try {
-      const allGifts = await ModelGifts.find();
+      const allGifts = await ModelGift.find();
       response.json({
         result: "good",
         message: "Hello from Gift!",
